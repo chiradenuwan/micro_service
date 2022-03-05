@@ -1,9 +1,10 @@
 package com.chiradenuwan.userservice.service.custom;
 
 import com.chiradenuwan.userservice.dto.UserDto;
+import com.chiradenuwan.userservice.dto.response.DepartmentForUserDto;
 
 public interface UserService {
     UserDto saveUser(UserDto userDto);
 
-    UserDto findUser(int userId);
+    DepartmentForUserDto findUserAndDepartmentByUserId(int userId);
 }

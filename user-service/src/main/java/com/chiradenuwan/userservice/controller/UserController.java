@@ -1,6 +1,7 @@
 package com.chiradenuwan.userservice.controller;
 
 import com.chiradenuwan.userservice.dto.UserDto;
+import com.chiradenuwan.userservice.dto.response.DepartmentForUserDto;
 import com.chiradenuwan.userservice.service.custom.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,10 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    private ResponseEntity<UserDto> findUser(@PathVariable("id") int userId) {
+    private ResponseEntity<DepartmentForUserDto> findUserAndDepartmentByUserId(@PathVariable("id") int userId) {
         try {
             log.info("Get User by Id -> Call");
-            UserDto user = userService.findUser(userId);
+            DepartmentForUserDto user = userService.findUserAndDepartmentByUserId(userId);
             return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
         } catch (Exception e) {
             e.printStackTrace();

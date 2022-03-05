@@ -1,5 +1,6 @@
 package com.chiradenuwan.userservice.entity;
 
+import com.chiradenuwan.userservice.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,5 +27,12 @@ public class User {
         this.name = name;
         this.address = address;
         this.department = department;
+    }
+
+
+    public UserDto viewAsDto() {
+        return new UserDto(
+                getId(), getName(), getAddress(), getDepartment()
+        );
     }
 }
