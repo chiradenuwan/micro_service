@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
                 userRepository.findById(userId);
         if (user.isPresent()) {
             DepartmentDto departmentDto = restTemplate
-                    .getForObject("http://localhost:8080/departments/" + user.get().getDepartment()
+                    .getForObject("http://DEPARTMENT-SERVICE/departments/" + user.get().getDepartment()
                             , DepartmentDto.class);
             return new DepartmentForUserDto(
                     user.get().viewAsDto(),
